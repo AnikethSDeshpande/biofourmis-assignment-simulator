@@ -55,7 +55,6 @@ class SimpleSimulator(Simulator):
         records = []
         i=0
         while current_time < end_time:
-            current_time = int((start + datetime.timedelta(seconds=i)).timestamp())
             i += 1
             record = {
                 "user_id": "abc",
@@ -65,5 +64,6 @@ class SimpleSimulator(Simulator):
                 "activity": random.randint(0,10)
             }
             records.append(record)
+            current_time = int((start + datetime.timedelta(seconds=i)).timestamp())
         
         return records
